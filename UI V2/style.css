@@ -21,3 +21,11 @@
     background-color: rgba(128, 128, 128, 0.2);
     color: black;
 }
+
+a{
+   color: white;
+}
+
+a:hover {
+    color: white;
+}
