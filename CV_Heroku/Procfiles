@@ -1,1 +1,0 @@
-web: ASPNETCORE_URLS='http://+:$PORT' dotnet ./CV_Heroku.dll --urls http://+:$PORT 
