@@ -9,6 +9,10 @@
     <link rel="icon" href="../../../../favicon.ico">
 
     <title>Narrow Jumbotron Template for Bootstrap</title>
+    
+
+        
+    </script>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -25,6 +29,20 @@
 
     <!-- Custom style -->
     <link href="style.css" rel="stylesheet">
+
+    <!-- Jquery da CDN per richieste AJAX verso il server node -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Script Jquery per richieste AJAX verso il server node -->
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $.get("/mensaALL"}, function(data) {
+              $("#risultato").html(data);
+            });
+          });
+        });
+    </script>
 
   </head>
 
