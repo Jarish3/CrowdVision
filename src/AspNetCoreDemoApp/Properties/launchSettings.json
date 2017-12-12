@@ -12,6 +12,10 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
+        "DATABASE_URL": "postgres://postgres:root@localhost:5432/crowdvision",
+        "subKey": "ff568f5f4f174f82a892e19b07da9c76",
+        "poolerRate": "60000",
+        "pathMense": "povo0;https://i.imgur.com/9pliX2j.jpg|povo1;https://i.imgur.com/ruOiGiz.jpg",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
@@ -19,6 +23,10 @@
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
+        "DATABASE_URL": "postgres://postgres:root@localhost:5432/crowdvision",
+        "subKey": "ff568f5f4f174f82a892e19b07da9c76",
+        "poolerRate": "60000",
+        "pathMense": "povo0;https://i.imgur.com/9pliX2j.jpg|povo1;https://i.imgur.com/ruOiGiz.jpg",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "http://localhost:55048/"
