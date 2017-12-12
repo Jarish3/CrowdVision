@@ -28,6 +28,20 @@
     <!-- Custom style -->
     <link href="style.css" rel="stylesheet">
 
+    <!-- Jquery da CDN per richieste AJAX verso il server node -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+    <!-- Script JQuery per richieste AJAX verso il server node -->
+    <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $.get("/:povo0"}, function(data) {
+              $("#risultato").html(data);
+            });
+          });
+        });
+    </script>
+
   </head>
 
   <body>
@@ -48,7 +62,7 @@
 
           <div class="row-lg-12 text-center" style="padding-bottom: 20px;">
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary btn-xl btn-square dropdown-toggle" data-toggle="dropdown" >Scegli la mensa</button>
+                    <button type="button" class="btn btn-primary btn-xl btn-square dropdown-toggle btn-droppie" data-toggle="dropdown" >Scegli la mensa</button>
                 
                     <div class="dropdown-menu" >
                         <a class="dropdown-item" href="#">A1</a>
@@ -56,6 +70,7 @@
                         <a class="dropdown-item" href="#">A3</a>
                     </div>
                 </div>
+                <button type="button" class="btn btn-primary btn-xl btn-square">Vai!</button> 
           </div>
           <div class="row-lg-12 text-center" style="padding-bottom: 20px;">
             La mensa più veloce:
