@@ -2,7 +2,7 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Npgsql;
 
-namespace AspNetCoreDemoApp
+namespace CrowdVisionCoreApp
 {
     public class Program
     {

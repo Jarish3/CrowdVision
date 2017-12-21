@@ -1,49 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './client/app';
-import './client/style.css';
+var express = require("express");
+var app = express();
 
-ReactDOM.render(
-	<App />,
-	document.getElementById('root')
-);
+app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 
-/*express config
-var express = require('express');
-var router = express.Router();
+var places = [	{ id:"i1", name:"n1"},
+				{ id:"i2", name:"n2"}	];
 
-//pg config
-var pg = require('pg');
-var connectionString = 'postgresql://dbuser:secretpassword@database.server.com:3211/mydb'; //Heroku forma?
+var place = [{id:"id", name:"na", location:"lo"}];
 
-//Mensa
-//GET tutte le mense
-router.get('/users', function(request, response, next) { //nome?
-	pg.connect(connectionString, function(err, client, done) {
-	if (err) {	return console.error('Errore durante il recupero del client dal pool', err);	}
-	console.log("Connesso al database");
-	
-	client.query('SELECT * FROM users', function(err, result) { //nome?
-		done();
-		if (err) {	return console.error('Errore durante esecuzione della query', err);	}
-		response.send(result);
-		});
-	});
+app.get('/',function(request, response) {
+	response.sendFile(__dirname + '/views/client.html');
 });
 
-//GET singola mensa
-router.get('/users/:id', function(request, response, next) { //nome?
-	pg.connect(connectionString, function(err, client, done) {
-	if (err) {	return console.error('Errore durante il recupero del client dal pool', err);	}
-	console.log("Connesso al database");
-	
-	client.query('SELECT * FROM users WHERE id = $1', [request.params.id], function(err, result) { //nome?
-		done();
-		if (err) {	return console.error('Errore durante esecuzione della query', err);	}
-		response.send(result);
-		});
-	});
+//dropdown-menu
+app.get('/list', function(request, response) {
+	response.render('client.html', {data: places})
 });
 
-module.exports = router;
-console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"); */
+//info page + confronto
+app.get('/info', function(request, response) {
+	response.render('client.html', {data: place});
+});
+
+module.exports = app;
+
+console.log(places);
+app.listen(3000, function() {
+  console.log("Started on PORT 3000");
+});
+

@@ -25,7 +25,7 @@ namespace CrowdVision.App_Start
 			string str = Environment.GetEnvironmentVariable("poolerRate");
 			Console.WriteLine("time:" + str);
 			
-			m_job = new PodMonitorJob(TimeSpan.FromMilliseconds(Math.Max(40000,Convert.ToInt32(str))));
+			m_job = new PodMonitorJob(TimeSpan.FromMilliseconds(Math.Max(4000,Convert.ToInt32(str))));
 			
 		}
 
@@ -112,7 +112,7 @@ namespace CrowdVision.Pooler
         // a free trial subscription key, you should not need to change this region.
         const string uriBase = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
 
-        static NpgsqlConnection postgresqlConn;
+        public static NpgsqlConnection postgresqlConn;
         public static bool connected;
         public static string connstring;
         public static void Setup()
@@ -215,7 +215,7 @@ namespace CrowdVision.Pooler
                 string contentString = await response.Content.ReadAsStringAsync();
 
                 var vp = new VisionProcesser(idMensa, contentString, byteData);
-                vp.pushSQL(postgresqlConn);
+                vp.PushSQL(postgresqlConn);
                 Console.WriteLine("Analyzed image:" + Path.GetFileName(imageFilePath));
             }
         }
@@ -285,7 +285,7 @@ class VisionProcesser
         Console.WriteLine("Number of faces detected:" + peopleCount);
     }
 
-    public bool pushSQL(NpgsqlConnection connection)
+    public bool PushSQL(NpgsqlConnection connection)
     {
         try
         {
@@ -301,6 +301,7 @@ class VisionProcesser
             insertCmd.Parameters.Add(imgParam);
             insertCmd.Parameters.Add(dataParam);
             insertCmd.ExecuteNonQuery();
+			insertCmd.Dispose();
             return true;
         }
         catch (Exception e)

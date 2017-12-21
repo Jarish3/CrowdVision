@@ -1,9 +1,18 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using System.Text.RegularExpressions;
 
-namespace AspNetCoreDemoApp
+namespace CrowdVisionCoreApp
 {
+	public class Utils
+	{
+		// Sanitizes input
+		static public string SanitizeString(string str)
+		{
+			return Regex.Replace(str, "[^?!(a-zA-Z0-9)]", "");
+		}
+	}
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)

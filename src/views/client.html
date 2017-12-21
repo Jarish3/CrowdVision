@@ -1,0 +1,36 @@
+<html>
+	<head></head>
+
+	<body>
+
+    <h1>Places</h1>
+
+		<!-- dropdown-menu -->
+		<div class="dropdown">
+			<div class="dropdown-menu">
+				<% data.forEach(function(data) { %>
+					<a class="dropdown-item" href="#"><%= data.id %> + <%= data.name %></a>
+				<% }); %>
+			</div>
+		</div>
+
+		<!-- info page + confronto -->
+		<div class="row">
+			<div class="column">
+			<h3>Id</h3>
+			<p><%= data[0].id %></p>
+			</div>
+
+			<div class="column">
+			<h3>Name</h3>
+			<p><%= data[0].name %></p>
+			</div>
+
+			<div class="column">
+			<h3>Location</h3>
+			<p><%= data[0].location %></p>
+			</div>
+		</div>
+
+	</body>
+</html>
