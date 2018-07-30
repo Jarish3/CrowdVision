@@ -1,0 +1,23 @@
+{
+    {
+        id: 1,
+        idgruppo: 1,
+        nome: 'Povo 0',
+        indirizzo: 'via Sommarive 10',
+        disponibilità: true,
+        numerodipersone: 50,
+        tempodiattesa: 10,
+        orariapertura: 'Lun - Ven, 11.50 - 14.00'
+    }
+
+    {
+        id: 2,
+        idgruppo: 1,
+        nome: 'Povo 1',
+        indirizzo: 'via Sommarive 12',
+        disponibilità: true,
+        numerodipersone: 60,
+        tempodiattesa: 30,
+        orariapertura: 'Lun - Ven, 11.50 - 14.00'
+    }
+}
