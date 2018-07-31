@@ -9,13 +9,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-jest": "^23.4.2",
     "jest": "^23.4.1"
   },
   "dependencies": {
     "express": "^4.16.3"
   },
-    "jest":{
-      "verbose": true,
-      "testURL": "http://localhost/"
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/"
   }
 }

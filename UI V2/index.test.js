@@ -1,5 +1,5 @@
 const index = require('./index.js');
-const values = require('./values.json')
+//const values = require('./values.json');
 
 let outputData = "";
 storeLog = inputs => (outputData += inputs);
