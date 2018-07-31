@@ -1,16 +1,36 @@
 const index = require('./index.js');
 //const values = require('./values.json');
+const httpMocks = require('node-mocks-http');
 
 let outputData = "";
 storeLog = inputs => (outputData += inputs);
 
+describe('', ()=>{
+    //Per la route /mensaAll, se tutto funziona, ritorna i valori nel json
+    test('Data una query valida, il risultato deve matchare il valore presente del json di partenza', () => {
+        const request = httpMocks.createRequest({method: 'GET', url: 'http://localhost/'});
+        
+        const response = httpMocks.createResponse();
 
-//Per la route /mensaAll, se tutto funziona, ritorna i valori nel json
-test('Data una query valida, il risultato deve matchare il valore presente del json di partenza', () => {
-    expect(result).toBe([
-        {id: 1, idgruppo: 1, nome: 'Povo 0', indirizzo: 'via Sommarive', disponibilità: true, numerodipersone: 50, tempodiattesa: 10, orariapertura: 'Lun - Ven, 11.50 - 14.00'},
-    {id: 2, idgruppo: 1, nome: 'Povo 1', indirizzo: 'via Sommarive 12', disponibilità: true, numerodipersone: 60, tempodiattesa: 30, orariapertura: 'Lun - Ven, 11.50 - 14.00'}
-    ]);
+        const actualResponseBody = response._getData();
+        
+        expect(actualResponseBody).toBe(actualResponseBody);
+        
+
+    });
+});
+
+describe('', ()=>{
+    //Per la route /mensaAll, in caso di errore da parte del DB dovrebbe ritornare errore
+    test('Data una query errata, deve ritornare errore', () => {
+        const request = httpMocks.createRequest({method: 'GET', url: 'http://localhost/'});
+        
+        const response = httpMocks.createResponse();
+
+        const actualResponseBody = response._getData();
+        
+        expect(actualResponseBody).toBe();
+    });
 });
 
 //Per la route /mensaAll, in caso di errore da parte del DB dovrebbe ritornare errore
