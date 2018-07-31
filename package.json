@@ -1,0 +1,17 @@
+{
+  "name": "UI-v2",
+  "version": "1.0.0",
+  "description": "UI-v2",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.4.1"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
