@@ -7,10 +7,10 @@ storeLog = inputs => (outputData += inputs);
 
 //Per la route /mensaAll, se tutto funziona, ritorna i valori nel json
 test('Data una query valida, il risultato deve matchare il valore presente del json di partenza', () => {
-    expect(result).toBe({
+    expect(result).toBe([
         {id: 1, idgruppo: 1, nome: 'Povo 0', indirizzo: 'via Sommarive', disponibilità: true, numerodipersone: 50, tempodiattesa: 10, orariapertura: 'Lun - Ven, 11.50 - 14.00'},
     {id: 2, idgruppo: 1, nome: 'Povo 1', indirizzo: 'via Sommarive 12', disponibilità: true, numerodipersone: 60, tempodiattesa: 30, orariapertura: 'Lun - Ven, 11.50 - 14.00'}
-    });
+    ]);
 });
 
 //Per la route /mensaAll, in caso di errore da parte del DB dovrebbe ritornare errore
@@ -35,7 +35,7 @@ test('Dato un id valido, il risultato deve matchare il valore presente del json 
     disponibilità: true,
     numerodipersone: 50,
     tempodiattesa: 10,
-    Orari apertura: 'Lun - Ven, 11.50 - 14.00'
+    orariapertura: 'Lun - Ven, 11.50 - 14.00'
     });
 });
 

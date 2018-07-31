@@ -64,7 +64,7 @@ app.get('/:id_gruppo', function(request, response, next) {
 			var time = result[0].N_persone * result[0].Tempo_servizio;
 			var temp;
 			 
-			for (int i=1; i<result.size(); i++) {
+			for (var i=1; i<result.size(); i++) {
 				temp = result[i].N_persone * result[i].Tempo_servizio;
 				if (temp < time) {
 					id_fast = i;
